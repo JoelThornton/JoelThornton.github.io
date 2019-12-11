@@ -12,7 +12,7 @@ body {
   margin-right: 10%;
   margin-top: 0px;
   padding: 20px;
-  background-color: PaleTurquoise
+  background-color: PaleTurquoise;
 }
 
 p {
@@ -20,7 +20,14 @@ p {
 }
 
 .opp {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  border-color: grey;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .vis {
