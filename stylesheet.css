@@ -1,3 +1,36 @@
+html,body {
+  height: calc(100%-20px);
+  margin: 0%;
+}
+body {
+  background: Turquoise;
+  padding: 10px
+}
+
+#opportunities {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0px;
+  padding: 20px;
+  background-color: PaleTurquoise
+}
+
 p {
   display: inline-block;
+}
+
+.opp {
+  margin-bottom: 20px;
+}
+
+.vis {
+  display: block;
+}
+
+.hid {
+  display: none;
+}
+
+.highlight {
+  background-color: lightblue;
 }
