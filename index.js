@@ -5,9 +5,3 @@ opps.push(createOpp("Hugh Baird: Main Campus", "Aimed at practical BTEC qualific
 opps.push(createOpp("Litherland Sports Park", "This family sized gym is great for the local community who wish to get fit. It has olympic grade facilties, tested by real olympians.",
                     "Resources\\img\\LSP.jpg"))
 // opps.push(createOpp("", ""))
-for (let opp of opps) {
-
-
-
-  console.log("pass");
-}
