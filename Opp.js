@@ -29,7 +29,6 @@ function createOpp(name, desc, img_src, container=document.getElementById("oppor
     div.onclick = show
   }
   div.onclick = show
-
   div.onmouseenter = () => {div.className += " highlight"}
   div.onmouseleave = () => {div.className = div.className.replace(" highlight", "")}
 
@@ -38,6 +37,8 @@ function createOpp(name, desc, img_src, container=document.getElementById("oppor
   div.appendChild(descP)
   div.appendChild(img)
   container.appendChild(div)
+
+  // create and return opp object
   return {
     nameP,
     descP
