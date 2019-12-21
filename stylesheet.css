@@ -20,6 +20,7 @@ p {
 }
 
 .opp {
+  max-height: 40px;
   margin-bottom: 15px;
   border-style: solid;
   border-radius: 5px;
@@ -28,14 +29,17 @@ p {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  overflow: hidden;
 }
 
-.vis {
-  display: block;
+@keyframes enlarge {
+  0% {max-height: 40px;}
+  100% {max-height: 300px;}
 }
 
-.hid {
-  display: none;
+@keyframes shrink {
+  0% {max-height: 500px;}
+  100% {max-height: 40px;}
 }
 
 .highlight {

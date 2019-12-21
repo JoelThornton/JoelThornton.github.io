@@ -13,19 +13,21 @@ function createOpp(name, desc, img_src, container=document.getElementById("oppor
 
   // set class
   div.className = "opp"
-  nameP.className = "vis"
-  descP.className = "hid"
-  img.className = "hid"
+  nameP.style.display = "block"
+  descP.style.display = "block"
+  img.style.display = "block"
 
   // events
-  const show = () => {
-    descP.className = descP.className.replace("hid", "vis")
-    img.className = img.className.replace("hid", "vis")
+  const show = () => {  // display extra info
+    div.style.animationName = "enlarge"
+    div.style.animationDuration = "0.2s"
+    div.style.animationFillMode = "forwards"
     div.onclick = hide
   }
-  const hide = () => {
-    descP.className = descP.className.replace("vis", "hid")
-    img.className = img.className.replace("vis", "hid")
+  const hide = () => {  // hide extra info
+    div.style.animationName = "shrink"
+    div.style.animationDuration = "0.2s"
+    div.style.animationFillMode = "forwards"
     div.onclick = show
   }
   div.onclick = show
