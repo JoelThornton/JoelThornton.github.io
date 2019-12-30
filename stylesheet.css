@@ -8,39 +8,41 @@ body {
 }
 
 #opportunities {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 0px;
+  width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   background-color: PaleTurquoise;
 }
 
-p {
-  display: inline-block;
-}
-
 .opp {
-  max-height: 40px;
-  margin-bottom: 15px;
   border-style: solid;
   border-radius: 5px;
   border-width: thin;
   border-color: grey;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  overflow: hidden;
+
+  width: 250px;  /*comment to allow unique widths/stretching*/
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes enlarge {
-  0% {max-height: 40px;}
-  100% {max-height: 300px;}
+p {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
-@keyframes shrink {
-  0% {max-height: 500px;}
-  100% {max-height: 40px;}
-}
+ image {
+   padding: 0px;
+   align-self: flex-end;
+   margin: 0px;
+ }
 
 .highlight {
   background-color: lightblue;
