@@ -2,8 +2,8 @@
 const opps = []  // opportunities
 
 
-for (let i=0; i<window.localStorage.length; i++) {
-  displayOpp(opp)
+for (let i=0; i<window.sessionStorage.length; i++) {
+  displayOpp(window.sessionStorage.key(i))
 }
 
 function displayOpp(name, img_src, container=document.getElementById("opportunities")) {
