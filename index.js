@@ -8,3 +8,7 @@ opps.push(createOpp("Litherland Sports Park", "Resources\\img\\LSP.jpg"))  // , 
 opps.push(createOpp("Litherland Sports Park", "Resources\\img\\LSP.jpg"))  // , "This family sized gym is great for the local community who wish to get fit. It has olympic grade facilties, tested by real olympians."
 opps.push(createOpp("Litherland Sports Park", "Resources\\img\\LSP.jpg"))  // , "This family sized gym is great for the local community who wish to get fit. It has olympic grade facilties, tested by real olympians."
 // opps.push(createOpp("", ""))
+
+for (let opp of opps) {
+  opp.display()
+}
