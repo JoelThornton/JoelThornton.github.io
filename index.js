@@ -1,9 +1,9 @@
-
+const stor = window.sessionStorage
 const opps = []  // opportunities
 
 
-for (let i=0; i<window.sessionStorage.length; i++) {
-  displayOpp(window.sessionStorage.key(i))
+for (let i=0; i<stor.length; i++) {
+  displayOpp(stor.key(i), stor.getItem(stor.key(i)))
 }
 
 function displayOpp(name, img_src, container=document.getElementById("opportunities")) {
