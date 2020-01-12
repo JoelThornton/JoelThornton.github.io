@@ -6,8 +6,19 @@ body {
   background: Turquoise;
   padding: 10px
 }
+#content {
+  display: flex;
+}
+
+#filter {
+  flex: 0 0 20%;
+
+  border-right: Turquoise solid 3px;
+  background-color: PaleTurquoise;
+}
 
 #opportunities {
+  flex: 1 0 auto;
   width: 1250px;
   margin-left: auto;
   margin-right: auto;
