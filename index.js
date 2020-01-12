@@ -1,5 +1,3 @@
-const stor = window.sessionStorage
-const opps = []  // opportunities
 
 function displayOpp(name, img_src, container=document.getElementById("opportunities")) {
   // create elements
@@ -32,6 +30,13 @@ function displayOpp(name, img_src, container=document.getElementById("opportunit
   container.appendChild(div)
 }
 
-for (let i=0; i<stor.length; i++) {
-  displayOpp(stor.key(i), stor.getItem(stor.key(i)))
+filter = {
+  include: ["all"],
+}
+
+for (let key in opps) {
+  let opp = opps[key]
+  if (filter.include[0] === "all" || filter.include.filter(value => opp.tags.includes(value)).length>0) {
+    displayOpp(key, opp.img_src)
+  }
 }
