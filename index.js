@@ -18,10 +18,12 @@ function displayOpp(name, img_src, container=document.getElementById("opportunit
   div.onmouseenter = () => {div.className += " highlight"}
   div.onmouseleave = () => {div.className = div.className.replace(" highlight", "")}
   div.onclick = function() {  // go to page with more detail on opportunity
-    url = "file:///C:/Users/camer/OneDrive/YAP/opp.html"
+    url = document.location.href.replace("index.html", "opp.html")
+    console.log(url);
+    // url = "file:///C:/Users/camer/OneDrive/YAP/opp.html"
     url += "?name=" + encodeURIComponent(name)
-    document.location.href = url
-    // setTimeout(()=>document.location.href = url, 1000)
+    // document.location.href = url
+    setTimeout(()=>document.location.href = url, 1000)
   }
 
   // append to parents
