@@ -1,0 +1,13 @@
+#header {
+  background-color: PaleTurquoise;
+  border-bottom: Turquoise solid 3px;
+
+  position: relative;
+  height: 25px;
+}
+
+#btnLogin {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
