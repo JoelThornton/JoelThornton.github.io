@@ -2,17 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="opportunities.css">
     <script type="text/javascript" src="opps_data.js"></script>
     <script defer type="text/javascript" src="index.js"></script>
     <meta charset="utf-8">
     <title>YAP</title>
   </head>
   <body>
-    <div id="header"></div>
     <div id="content">
-      <div id="filter">
-        
+      <div id="loginWindow" class="collapsed" onclick="openLogin()">
+        <input type="text" id="username" placeholder="Username" value="">
+        <input type="password" id="password" placeholder="Password" value="">
       </div>
+      <div id="filter"></div>
       <div id="opportunities"></div>
     </div>
   </body>

@@ -1,13 +1,23 @@
-#header {
-  background-color: PaleTurquoise;
-  border-bottom: Turquoise solid 3px;
+#loginWindow {
+  margin: auto;
+  width: 15%;
+  min-width: 216px;
+  overflow: hidden;
+  padding: 20px;
 
-  position: relative;
-  height: 25px;
+  background-color: white;
 }
 
-#btnLogin {
-  position: absolute;
-  right: 2px;
-  top: 2px;
+#password, #repassword, #username, #loginBtn, #email {
+  margin: auto;
+  display: block;
+}
+
+#registerWindow {
+  margin: auto;
+  width: 35%;
+  min-width: 216px;
+  padding: 20px;
+
+  background-color: white;
 }
