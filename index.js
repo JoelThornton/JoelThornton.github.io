@@ -1,14 +1,14 @@
 const container=document.getElementById("opportunities")
 
-function displayOpp(name, img_src) {
+function displayOpp(opp) {
   // create elements
   const div = document.createElement("div")  // container div
   const nameP = document.createElement("p")  // <p>: opp name
   const img = document.createElement("img")
 
   // populate elements
-  nameP.innerHTML = name
-  img.src = img_src
+  nameP.innerHTML = opp.name
+  img.src = opp.img_src
 
   // set class
   div.className = "opp"
@@ -22,7 +22,7 @@ function displayOpp(name, img_src) {
     url = document.location.href.replace("index.html", "opp.html")
     console.log(url);
     // url = "file:///C:/Users/camer/OneDrive/YAP/opp.html"
-    url += "?name=" + encodeURIComponent(name)
+    url += "?index=" + encodeURIComponent(opps.indexOf(opp))
     document.location.href = url
     // setTimeout(()=>document.location.href = url, 1000)
   }
@@ -37,19 +37,28 @@ filter = {
   include: ["all"],
 }
 
-for (let key in opps) {
-  let opp = opps[key]
+for (let opp of opps) {
   if (filter.include[0] === "all" || filter.include.filter(value => opp.tags.includes(value)).length>0) {
-    displayOpp(key, opp.img_src)
+    displayOpp(opp)
   }
 }
 
 function filterOpps() {
   const tags = [...document.getElementsByClassName("filtration")].filter((checkbox) => {return checkbox.checked}).map((checkbox) => {return checkbox.value})
-  console.log(tags);
-  
+  // clear container
+  container.innerHTML = ""
+
+  // calculate rankings
   for (let key in opps) {
     const opp = opps[key]
+    opp.ranking = opp.tags.filter(tag => tags.includes(tag)).length
+  }
 
+  // display selected opportunities in order of most relevent
+  opps.sort((a, b) => b.ranking - a.ranking)
+  for (let opp of opps) {
+    if (opp.ranking > 0) {
+      displayOpp(opp)
+    }
   }
 }
