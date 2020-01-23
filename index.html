@@ -15,7 +15,16 @@
       <a href="register.html"><input type="button" id="registerLink" value="Sign Up"></a>
     </div>
     <div id="content">
-      <div id="filter"></div>
+      <div id="filter">
+        <input type="checkbox" value="A-Level" class="filtration"> A-Level<br>
+        <input type="checkbox" value="BTEC" class="filtration"> BTEC<br>
+        <input type="checkbox" value="Education" class="filtration"> Education<br>
+        <input type="checkbox" value="Exercise" class="filtration"> Exercise<br>
+        <input type="checkbox" value="Gym" class="filtration"> Gym<br>
+        <input type="checkbox" value="Sport" class="filtration"> Sport<br>
+        <input type="button" value="Filter" onclick="filterOpps()">
+        <p style="color: red;">Filtering is not yet fully implemented</p>
+      </div>
       <div id="opportunities"></div>
     </div>
   </body>

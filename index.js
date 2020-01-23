@@ -1,5 +1,6 @@
+const container=document.getElementById("opportunities")
 
-function displayOpp(name, img_src, container=document.getElementById("opportunities")) {
+function displayOpp(name, img_src) {
   // create elements
   const div = document.createElement("div")  // container div
   const nameP = document.createElement("p")  // <p>: opp name
@@ -40,5 +41,15 @@ for (let key in opps) {
   let opp = opps[key]
   if (filter.include[0] === "all" || filter.include.filter(value => opp.tags.includes(value)).length>0) {
     displayOpp(key, opp.img_src)
+  }
+}
+
+function filterOpps() {
+  const tags = [...document.getElementsByClassName("filtration")].filter((checkbox) => {return checkbox.checked}).map((checkbox) => {return checkbox.value})
+  console.log(tags);
+  
+  for (let key in opps) {
+    const opp = opps[key]
+
   }
 }
