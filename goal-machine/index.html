@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goal Machine has moved</title>
+  <meta name="robots" content="noindex">
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #07261d; color: #f2fbf6; font: 16px system-ui, sans-serif; text-align: center; padding: 16px; box-sizing: border-box; }
+    .box { max-width: 420px; }
+    h1 { color: #c8ff3d; font-size: 1.8rem; margin: 0 0 8px; }
+    a.btn { display: block; margin: 12px 0; padding: 14px; border-radius: 12px; background: #c8ff3d; color: #0a2a1f; font-weight: 800; text-decoration: none; }
+    a.ghost { background: transparent; color: #f2fbf6; border: 1px solid rgba(255,255,255,.3); }
+    p { color: #9dc2b1; }
+  </style>
+</head>
+<body>
+  <div class="box" id="box"><h1>⚽ Goal Machine has moved</h1><p>Taking you there…</p></div>
+  <script>
+    // Goal Machine now lives at opportunisticgames.github.io. This page forwards old links and carries the player's
+    // saved scores, album and settings across (browsers keep them per address), then removes the old offline copy.
+    (function () {
+      var NEW = 'https://opportunisticgames.github.io/goal-machine/';
+      var APK = 'https://github.com/OpportunisticGames/opportunisticgames.github.io/releases/latest/download/goal-machine.apk';
+      var data = {}, n = 0;
+      try {
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k.indexOf('gm:') === 0) { data[k] = localStorage.getItem(k); n++; }
+        }
+      } catch (e) {}
+      var route = location.hash && location.hash.indexOf('#/') === 0 ? location.hash : '#/';
+      var url = n ? NEW + '#import=' + btoa(unescape(encodeURIComponent(JSON.stringify(data)))) + '&r=' + encodeURIComponent(route) : NEW + route;
+      if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+        navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); });
+      }
+      if (window.caches && caches.keys) caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); });
+      if (window.AndroidApp) {
+        // the old Android app can only show this address, so point people at the new app
+        document.getElementById('box').innerHTML = '<h1>⚽ Goal Machine has moved</h1>' +
+          '<p>There’s a new version of the app. Install it, then you can delete this one.</p>' +
+          '<a class="btn" href="' + APK + '">📲 Get the new app</a>' +
+          '<a class="btn ghost" href="' + url + '">Keep playing in my browser (brings your scores)</a>';
+      } else {
+        location.replace(url);
+      }
+    })();
+  </script>
+</body>
+</html>
